@@ -43,6 +43,7 @@
                             <Button fx:id="localStorageSelect" onAction="#selectAllFilesFromLocalStorage" prefHeight="30" prefWidth="108.0" style="-fx-text-fill: white;" text="Select all">Select all</Button>
                             <Button fx:id="localStorageUpdate" onAction="#initializeListOfLocalStorageItems" prefHeight="30" prefWidth="116.0" style="-fx-text-fill: white;">Update</Button>
                             <Button fx:id="localStorageDelete" onAction="#deleteChosenFilesFromLocalStorage" prefHeight="30" prefWidth="116.0" style="-fx-text-fill: white;">Delete</Button>
+                            <Button fx:id="localStorageMkDir" onAction="#deleteChosenFilesFromLocalStorage" prefHeight="30" prefWidth="116.0" style="-fx-text-fill: white;">MkDir</Button>
                         </children>
                      </HBox>
                  </children>
@@ -83,7 +84,8 @@
                         <Button fx:id="cloudStorageDownload" onAction="#downloadFilesIntoLocalStorage" prefHeight="30" prefWidth="113.0" style="-fx-text-fill: white;" >Download</Button>
                         <Button fx:id="cloudStorageSelect" onAction="#selectAllFilesFromCloudStorage" prefHeight="30" prefWidth="110.0" style="-fx-text-fill: white;">Select All</Button>
                         <Button fx:id="cloudStorageUpdate" onAction="#updateCloudStoragePanel" prefHeight="30" prefWidth="111.0" style="-fx-text-fill: white;" text="Update">Update</Button>
-                            <Button fx:id="cloudStorageDelete" onAction="#deleteChosenFilesFromCloudStorage" prefHeight="30" prefWidth="110.0" style="-fx-text-fill: white;">Delete</Button>
+                        <Button fx:id="cloudStorageDelete" onAction="#deleteChosenFilesFromCloudStorage" prefHeight="30" prefWidth="110.0" style="-fx-text-fill: white;">Delete</Button>
+                        <Button fx:id="cloudStorageMkDir" onAction="#createDirectory" prefHeight="30" prefWidth="110.0" style="-fx-text-fill: white;">MkDir</Button>
                         </children>
                  </HBox>
                  </children>

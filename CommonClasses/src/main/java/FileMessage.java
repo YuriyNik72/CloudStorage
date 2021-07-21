@@ -1,5 +1,4 @@
 import java.io.IOException;
-import java.nio.file.AccessDeniedException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
@@ -21,11 +20,12 @@ public class FileMessage extends AbstractMessage {
         this.isDirectory = isDirectory;
         this.isEmpty = isEmpty;
     }
-    public FileMessage(String login, Path path) throws IOException, AccessDeniedException {
+    public FileMessage(String login, Path path) throws IOException {
         fileName = path.getFileName().toString();
         data = Files.readAllBytes(path);
         this.login = login;
     }
+
 
     public String getFileName() {
         return fileName;
