@@ -38,7 +38,7 @@
 }
 
 #loginField, #passwordField, #entryButton, #registrationButton, #registrationLoginForm, #registrationPassForm,#repeatPassForm, #finalRegistrationButton,
-#cancelRegistrationButton, #localStorageSend, #localStorageUpdate,#localStorageDelete, #cloudStorageDownload, #cloudStorageUpdate, #cloudStorageDelete
+#cancelRegistrationButton, #localStorageSend, #localStorageUpdate,#localStorageDelete,#localStorageMkDir, #cloudStorageDownload, #cloudStorageUpdate, #cloudStorageDelete,#cloudStorageMkDir
 {
     -fx-focus-color: transparent;
     -fx-faint-focus-color: transparent;
@@ -69,8 +69,8 @@
 }
 
 
-#leftColumn, #infoPanel, #upperLocalStorePanel, #upperLocalStorePanel1 , #cloudStorageDownload,
- #cloudStorageDelete, #cloudStorageUpdate, #localStorageSelect, #localStorageUpdate,#cloudStorageSelect, #localStorageDelete, #localStorageSend {
+#leftColumn, #infoPanel, #upperLocalStorePanel, #upperLocalStorePanel1 , #cloudStorageDownload,#localStorageMkDir,
+ #cloudStorageDelete, #cloudStorageUpdate, #localStorageSelect, #localStorageUpdate,#cloudStorageSelect, #localStorageDelete, #localStorageSend,#cloudStorageMkDir {
  -fx-background-color:  linear-gradient(to right, rgba(44,44,44,1) 0%, rgba(0,0,0,1) 0%, rgba(17,17,17,1) 0%, rgba(76,76,76,1) 0%,
  rgba(71,71,71,1) 0%, rgba(102,102,102,1) 0%, rgba(89,89,89,1) 0%, rgba(28,28,28,1) 0%, rgba(43,43,43,1) 76%, rgba(19,19,19,1) 100%);
 }
@@ -87,7 +87,7 @@
    -fx-font-size: 14;
 }
 #localStorageSend:hover, #localStorageDelete:hover, #localStorageUpdate:hover, #cloudStorageDownload:hover,#cloudStorageDelete:hover,
-  #cloudStorageUpdate:hover{
+  #cloudStorageUpdate:hover, #localStorageMkDir:hover, #cloudStorageMkDir{
  -fx-opacity: 0.6;
 }
 #menuIcon:hover {

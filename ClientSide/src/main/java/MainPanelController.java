@@ -33,7 +33,6 @@ public class MainPanelController implements Initializable {
     private int localStorageFolderLevelCounter = 0;
     private int cloudStorageFolderLevelCounter = 0;
     private HashMap<Integer, LinkedList<File>> folderCloudStorageListViews;
-    private LinkedList<File> pathsToCloudStorageFiles;
     private String watchableDirectory = "ClientSide" + File.separator + "LocalStorage";
     private String currentDirectoryName = "";
     AudioClip soundOfFolderOpening = new AudioClip(this.getClass().getResource("foldersound.mp3").toExternalForm());
@@ -346,8 +345,8 @@ public class MainPanelController implements Initializable {
                     }
                 }else {
                     Desktop desktop = null;
-                    if (desktop.isDesktopSupported()){
-                        desktop = desktop.getDesktop();
+                    if (Desktop.isDesktopSupported()){
+                        desktop = Desktop.getDesktop();
                         try {
                             desktop.open(pathToClickedFile);
                         } catch (IOException e) {
@@ -399,7 +398,7 @@ public class MainPanelController implements Initializable {
         }
     }
     public void goToNextDirectoryInCloudStorageOnDoubleClick(MouseEvent mouseEvent) {
-        pathsToCloudStorageFiles = new LinkedList<>();
+        LinkedList<File> pathsToCloudStorageFiles = new LinkedList<>();
         if (mouseEvent.getClickCount() == 1) {
             listOfCloudStorageElements.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         } else if (mouseEvent.getClickCount() == 2) {
@@ -414,10 +413,10 @@ public class MainPanelController implements Initializable {
                 }
                 if (pathToClickedFile.isDirectory()) {
                     File[] nextDirectory = pathToClickedFile.listFiles();
-                    if (nextDirectory.length == 0) {
-                        System.out.println("пустая директория");
-                    }
-                    if (nextDirectory.length != 0) {
+//                    if (nextDirectory.length == 0) {
+//                        System.out.println("пустая директория");
+//                    }
+                    if (nextDirectory.length >= 0) {
                         for (int i = 0; i < nextDirectory.length; i++) {
                             try {
                                 pathsToCloudStorageFiles.add(nextDirectory[i]);
@@ -647,4 +646,6 @@ public class MainPanelController implements Initializable {
         soundOfFolderOpening.play();
     }
 
+    public void createDirectory(ActionEvent actionEvent) {
+    }
 }
