@@ -1,3 +1,4 @@
+import java.io.File;
 import java.sql.*;
 
 /*
@@ -10,7 +11,7 @@ public class DBRequestHandler {
 
     public static void getConnectionWithDB(){
         try {
-            connection  = DriverManager.getConnection("jdbc:sqlite:users.db");
+            connection  = DriverManager.getConnection("jdbc:sqlite:C:\\JAVA\\HomeWork\\CloudStorage\\ServerSide\\src\\main\\resources\\main.db");
             statement = connection.createStatement();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -32,7 +33,7 @@ public class DBRequestHandler {
     }
 
     public static boolean checkIfUserExistsForAuthorization(String login){
-        String dbQuery = "SELECT login FROM users";
+        String dbQuery = "SELECT login FROM main";
         try {
             ResultSet resultSet = statement.executeQuery(dbQuery);
             while (resultSet.next()){
@@ -47,7 +48,7 @@ public class DBRequestHandler {
 
     }
     public static boolean checkIfPasswordIsRight(String login, String password){
-        String dbQuery = "SELECT password FROM users WHERE login='"+login+"'";
+        String dbQuery = "SELECT password FROM main WHERE login='"+login+"'";
         try {
              ResultSet resultSet = statement.executeQuery(dbQuery);
              String passwordFromDB = resultSet.getString("password");
@@ -61,7 +62,7 @@ public class DBRequestHandler {
     }
 
     public static boolean registerNewUser(String login, String password){
-        String dbQuery = "INSERT INTO users(login,password) VALUES ('"+login+"','"+password+"')";
+        String dbQuery = "INSERT INTO main(login,password) VALUES ('"+login+"','"+password+"')";
         try {
             int rows = statement.executeUpdate(dbQuery);
             if (rows > 0) return true;
